@@ -10,9 +10,6 @@ const avatar = require('./images/avatar.png')
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
-    box: {
-      backgroundColor: '#000000', // Black background for dark theme
-    },
     
   },
 
@@ -26,10 +23,6 @@ const darkTheme = createTheme({
 const lightTheme = createTheme({
   palette: {
     mode: 'light',
-    box: {
-      backgroundColor: '#FFFFFF', // White background for light theme
-    },
-    
   },
   
   typography: {
@@ -40,29 +33,30 @@ const lightTheme = createTheme({
 });
 
 function App() {
-  const [theme, setTheme]= useState(darkTheme)
+  const [theme, setTheme]= useState(darkTheme);
+  const [btncolor, setBtncolor]= useState('secondary')
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === darkTheme ? lightTheme : darkTheme);
-
+    setBtncolor(prevColor=>prevColor==='primary'? 'secondary':'primary');
 }
   return (
     <>
     <ThemeProvider theme={theme}>
-    <Box sx={{textAlign:'center'}}> <Button onClick={toggleTheme} variant="contained" color="secondary" sx={{ marginTop: 2}}>
+    <Box sx={{textAlign:'center'}}> <Button onClick={toggleTheme} variant="contained" color={btncolor} sx={{ marginTop: 2}}>
           Toggle Theme
         </Button></Box>
       <Paper sx={{width:1000, height:'100vh', margin:'auto'}}>
-    <Typography variant="h4" component="h5" sx={{textAlign:'center', marginTop:10, padding:8}}>Let us make dark/light mode using material ui react</Typography>
+    <Typography variant="h4" component="h5" sx={{textAlign:'center', marginTop:10, padding:8}}>Let us toggle dark/light mode using material ui react</Typography>
    <Grid container spacing={2} sx={{width:800, margin:'auto'}}>
     <Grid xs={3}>
-    <Paper sx={{height:200,textAlign:'center'}} elevation={3}><Typography>Hello I am a paper</Typography><img src={avatar} alt="other avatar" style={{width:'70%'}}/></Paper>
+    <Paper sx={{height:200,textAlign:'center'}} elevation={3}><Typography>Hello I am an avatar</Typography><img src={avatar} alt="other avatar" style={{width:'70%'}}/></Paper>
     </Grid>
     <Grid xs={3}>
-    <Paper sx={{height:200,textAlign:'center', backgroundImage:`url(${avatar})`, backgroundSize:'cover', backgroundPosition:'center'}} elevation={3} >Hello I am a paper</Paper>
+    <Paper sx={{height:200,textAlign:'center', backgroundImage:`url(${avatar})`, backgroundSize:'cover', backgroundPosition:'center'}} elevation={3} >Hello I am another avatar</Paper>
     </Grid>
     <Grid xs={3}>
     <Paper sx={{height:200,textAlign:'center'}} elevation={3}>
-    <Typography variant="h5" component="h6">
+    <Typography variant="h7" component="h7">
     Hello I am a paper
     </Typography>
     </Paper>
