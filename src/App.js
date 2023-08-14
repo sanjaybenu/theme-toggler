@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Paper, Typography, Container, Button, Box } from '@mui/material';
+import { Paper, Typography, Button, Box } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
@@ -45,7 +45,7 @@ function App() {
     <Box sx={{textAlign:'center'}}> <Button onClick={toggleTheme} variant="contained" color={btncolor} sx={{ marginTop: 2}}>
           Toggle Theme
         </Button></Box>
-      <Paper sx={{width:1000, height:'100vh', margin:'auto'}}>
+      <Paper sx={{width:1000, height:'100vh', margin:'auto'}} elevation={8}>
     <Typography variant="h4" component="h5" sx={{textAlign:'center', marginTop:10, padding:8}}>Let us toggle dark/light mode using material ui react</Typography>
    <Grid container spacing={2} sx={{width:800, margin:'auto'}}>
     <Grid xs={3}>
