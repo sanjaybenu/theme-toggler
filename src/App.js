@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Paper, Typography, Button, Box } from "@mui/material";
+import { Paper, Typography,Switch } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./App.css";
+import Header from "./components/Header";
 
 // import Avatar from '@mui/material/Avatar';
 // import Stack from '@mui/material/Stack';
@@ -37,29 +38,29 @@ function App() {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === darkTheme ? lightTheme : darkTheme));
     setBtncolor((prevColor) =>
-      prevColor === "secondary" ? "primary" : "secondary"
+      prevColor === "secondary" ? "default" : "secondary"
     );
   };
   return (
-    <>
+    
       <ThemeProvider theme={theme}>
+        <Header >
+
+            <Switch
+              onClick={toggleTheme}
+              variant="contained"
+              color={btncolor}
+              sx={{ float: "right"}}
+           / >
+          
+          </Header>
+       
         <Paper
           sx={{ height: "100vh", margin: "auto" }}
           elevation={8}
           maxWidth="sm"
         >
-          <Box sx={{ textAlign: "center" }}>
-            {" "}
-            <Button
-              onClick={toggleTheme}
-              variant="contained"
-              color={btncolor}
-              sx={{ marginTop: 2 }}
-            >
-              Toggle Theme
-            </Button>
-          </Box>
-
+          <>
           <Typography
             variant="h4"
             component="h5"
@@ -101,9 +102,10 @@ function App() {
               </Paper>
             </Grid>
           </Grid>
+          </>
         </Paper>
       </ThemeProvider>
-    </>
+   
   );
 }
 
