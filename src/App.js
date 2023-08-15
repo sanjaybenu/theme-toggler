@@ -37,7 +37,7 @@ function App() {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === darkTheme ? lightTheme : darkTheme));
     setBtncolor((prevColor) =>
-      prevColor === "primary" ? "secondary" : "primary"
+      prevColor === "secondary" ? "primary" : "secondary"
     );
   };
   return (
