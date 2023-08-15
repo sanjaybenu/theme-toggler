@@ -44,10 +44,10 @@ function App() {
     <ThemeProvider theme={theme}>
     <Box sx={{textAlign:'center'}}> <Button onClick={toggleTheme} variant="contained" color={btncolor} sx={{ marginTop: 2}}>
           Toggle Theme
-        </Button></Box>
-      <Paper sx={{width:1000, height:'100vh', margin:'auto'}} elevation={8}>
+        </Button></Box >
+      <Paper sx={{ height:'100vh', margin:'auto'}} elevation={8} maxWidth='sm'>
     <Typography variant="h4" component="h5" sx={{textAlign:'center', marginTop:10, padding:8}}>Let us toggle dark/light mode using material ui react</Typography>
-   <Grid container spacing={2} sx={{width:800, margin:'auto'}}>
+   <Grid container spacing={2} sx={{margin:'auto'}} maxWidth='sm' >
     <Grid xs={3}>
     <Paper sx={{height:200,textAlign:'center'}} elevation={3}><Typography>Hello I am an avatar</Typography><img src={avatar} alt="other avatar" style={{width:'70%'}}/></Paper>
     </Grid>
