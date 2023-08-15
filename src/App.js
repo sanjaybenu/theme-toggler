@@ -68,7 +68,7 @@ function App() {
           >
             Let us toggle dark/light mode using material ui react
           </Typography>
-          <Grid container spacing={2} sx={{ margin: "auto" }} maxWidth="sm">
+          <Grid container spacing={2} sx={{ margin: "auto" }} maxWidth="md">
             <Grid xs={3}>
               <Paper sx={{ height: 200, textAlign: "center" }} elevation={3}>
                 <Typography>Hello I am an avatar</Typography>
