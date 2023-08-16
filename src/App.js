@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { Paper, Typography,Switch } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Paper, Typography, Switch, Box } from "@mui/material";
+//import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./App.css";
 import Header from "./components/Header";
+import Page from "./components/Page";
+import Navigation from "./components/Navigation";
+//import { Navigation } from "@mui/icons-material";
 
 // import Avatar from '@mui/material/Avatar';
 // import Stack from '@mui/material/Stack';
-const avatar = require("./images/avatar.png");
+//const avatar = require("./images/avatar.png");
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -41,26 +44,40 @@ function App() {
       prevColor === "secondary" ? "default" : "secondary"
     );
   };
-  return (
-    
-      <ThemeProvider theme={theme}>
-        <Header >
+  const [pages] = useState([
+    { name: "Home" },
+    { name: "About" },
+    { name: "Contact" },
+    { name: "Portfolio" },
+    { name: "Resume" },
+  ]);
 
-            <Switch
-              onClick={toggleTheme}
-              variant="contained"
-              color={btncolor}
-              sx={{ float: "right"}}
-           / >
-          
-          </Header>
-       
-        <Paper
-          sx={{ height: "100vh", margin: "auto" }}
-          elevation={8}
-          maxWidth="sm"
-        >
-          <>
+  const [currentPage, setCurrentPage] = useState(pages[0]);
+  return (
+    <ThemeProvider theme={theme}>
+      <Header>
+        <Navigation
+          pages={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+
+        <Typography variant="subtitle2">Toggle Mode</Typography>
+
+        <Switch
+          onClick={toggleTheme}
+          variant="contained"
+          color={btncolor}
+          sx={{ float: "right" }}
+        />
+      </Header>
+
+      <Paper
+        sx={{ height: "100vh", margin: "0 20", padding: "150px" }}
+        elevation={8}
+        maxWidth="sm"
+      >
+        {/* <>
           <Typography
             variant="h4"
             component="h5"
@@ -102,10 +119,12 @@ function App() {
               </Paper>
             </Grid>
           </Grid>
-          </>
-        </Paper>
-      </ThemeProvider>
-   
+          </> */}
+        <Box>
+          <Page currentPage={currentPage} />
+        </Box>
+      </Paper>
+    </ThemeProvider>
   );
 }
 
