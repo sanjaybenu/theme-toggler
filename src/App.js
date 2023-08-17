@@ -44,7 +44,6 @@ function App() {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       >
-        {/* <Typography variant="subtitle2">Change Theme</Typography> */}
         <StyledSwitch
           onClick={toggleTheme}
           variant="contained"
@@ -57,7 +56,6 @@ function App() {
         elevation={8}
         maxWidth="sm"
       >
-        {/* <ResponsiveAppBar/> */}
 
         <Box>
           <Page currentPage={currentPage} />

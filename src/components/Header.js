@@ -21,7 +21,6 @@ const Header = (props) => {
     document.title = currentPage.name;
   }, [currentPage]);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  //const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -84,7 +83,7 @@ const Header = (props) => {
               }}
             >
               {pages.map((Page) => (
-                <MenuItem key={Page.name} onClick={() => setCurrentPage(Page)}>
+                <MenuItem key={Page.name} onClick={() => {setCurrentPage(Page);handleCloseNavMenu();}}>
                   <Typography textAlign="center">{Page.name}</Typography>
                 </MenuItem>
               ))}
@@ -102,7 +101,7 @@ const Header = (props) => {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".15rem",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -113,7 +112,7 @@ const Header = (props) => {
             {pages.map((Page) => (
               <Button
                 key={Page.name}
-                onClick={() => setCurrentPage(Page)} //replace with setCurrentPage
+                onClick={() => {setCurrentPage(Page);handleCloseNavMenu();}}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {Page.name}
