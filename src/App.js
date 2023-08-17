@@ -19,13 +19,9 @@ const lightTheme = createTheme({
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
-  const [btncolor, setBtncolor] = useState("secondary");
   const toggleTheme = () => {
     setTheme((prevTheme) =>
       prevTheme === lightTheme ? darkTheme : lightTheme
-    );
-    setBtncolor((prevColor) =>
-      prevColor === "secondary" ? "default" : "secondary"
     );
   };
   const [pages] = useState([
@@ -47,7 +43,6 @@ function App() {
         <StyledSwitch
           onClick={toggleTheme}
           variant="contained"
-          color={btncolor}
         />
       </Header>
 
