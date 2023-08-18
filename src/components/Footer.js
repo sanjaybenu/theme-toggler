@@ -1,11 +1,10 @@
 import * as React from 'react';
-import{ Box, BottomNavigation,BottomNavigationAction, Link, Typography} from '@mui/material';
+import{ Box, BottomNavigation,BottomNavigationAction, Link,} from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 export default function Footer() {
 
@@ -15,8 +14,6 @@ export default function Footer() {
       <BottomNavigation
         showLabels
       > 
-        
-         <Typography variant="caption">Made with <FavoriteBorderIcon /> by Sanjay Chopra</Typography>
         <Link href="https://www.github.com" target="_blank" rel="noreferrer"  ><BottomNavigationAction label="Github" icon={<GitHubIcon />} /></Link>
         <Link href="https://www.linkedin.com" target="_blank" rel="noreferrer" ><BottomNavigationAction label="Linkedin" icon={<LinkedInIcon />} /></Link>
         <Link href="https://www.twitter.com" target="_blank" rel="noreferrer" ><BottomNavigationAction label="Twitter" icon={<TwitterIcon />} /></Link>
