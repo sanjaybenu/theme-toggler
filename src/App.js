@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./App.css";
 import Page from "./components/Page";
 import Header from "./components/Header";
+import Footer from "./components/Footer"
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 const darkTheme = createTheme({
@@ -18,6 +19,13 @@ const lightTheme = createTheme({
   },
   components: {
     MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%)", // Set the background color here
+        },
+      },
+    },
+    MuiBottomNavigation: {
       styleOverrides: {
         root: {
           background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%)", // Set the background color here
@@ -44,8 +52,8 @@ function App() {
   const [pages] = useState([
     { name: "Home" },
     { name: "About" },
-    { name: "Contact" },
     { name: "Portfolio" },
+    { name: "Contact" },
     { name: "Resume" },
   ]);
 
@@ -80,7 +88,9 @@ function App() {
         <Box>
           <Page currentPage={currentPage} />
         </Box>
+        
       </Paper>
+      <Footer />
     </ThemeProvider>
   );
 }
