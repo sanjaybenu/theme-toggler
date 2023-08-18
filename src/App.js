@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Paper, Box, IconButton, Grid } from "@mui/material";
+import { Paper, Box, IconButton, Grid, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./App.css";
 import Page from "./components/Page";
@@ -15,6 +15,22 @@ const darkTheme = createTheme({
 const lightTheme = createTheme({
   palette: {
     mode: "light",
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%)", // Set the background color here
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color:"white"
+        },
+      },
+    },
   },
 });
 
@@ -53,9 +69,9 @@ function App() {
 </Grid>
 
       </Header>
-
-      <Paper
-        sx={{ minHeight: "100vh", margin: "auto", padding: "50px" }}
+<CssBaseline />
+      <Paper 
+        sx={{ minHeight: "100vh", margin: "auto", padding: "50px"}}
         elevation={8}
         maxWidth="sm"
         square="true"
