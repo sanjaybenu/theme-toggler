@@ -68,9 +68,18 @@ export default function Contact() {
   return (
     <>
     {submitted ? (
-      <Box sx={{textAlign:"center"}}>
-        <Typography variant="h5">Information submitted successfully!</ Typography>
+      <Modal
+        open="true"
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          Information submitted successfully
+          </Typography>
         </Box>
+      </Modal>
       ):
     (<Box
       sx={{
@@ -150,9 +159,6 @@ export default function Contact() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography> */}
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {alert}
           </Typography>
