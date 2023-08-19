@@ -1,7 +1,21 @@
 import * as React from "react";
 import {useState} from 'react'
 import Box from "@mui/material/Box";
-import { TextField, Grid, Typography, Button } from "@mui/material";
+import { TextField, Grid, Typography, Button, Modal } from "@mui/material";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'danger',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
+
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -9,7 +23,12 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
+  // modal
+  const [open, setOpen] = React.useState(false);
+  const [alert, setAlert]= React.useState("")
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  //modal
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -18,17 +37,20 @@ export default function Contact() {
     const phoneRegex = /^\d+$/;
 
     if (!name || !email || !phone || !message) {
-      alert("Please fill in all fields");
+      setAlert ("Please fill in all fields");
+      handleOpen()
       return;
     }
 
     if (!emailRegex.test(email)) {
-      alert("Please enter a valid email");
+      setAlert("Please enter a valid email");
+      handleOpen()
       return;
     }
 
     if (!phoneRegex.test(phone)) {
-      alert("Please enter a valid phone number");
+      setAlert("Please enter a valid phone number");
+      handleOpen()
       return;
     }
 
@@ -55,7 +77,7 @@ export default function Contact() {
         maxWidth: "100%",
         border: "2px black solid",
         borderRadius: "5px",
-        boxShadow: "3px 6px grey ",
+        boxShadow: "5px 3px rgba(193, 39, 245, 0.8) ",
       }}
     >
       {" "}
@@ -120,6 +142,23 @@ export default function Contact() {
           </Grid>
         </Grid>
       </Box>
+      <div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography> */}
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {alert}
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
     </Box>
     )}
    </>
