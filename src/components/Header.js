@@ -83,7 +83,13 @@ const Header = (props) => {
               }}
             >
               {pages.map((Page) => (
-                <MenuItem key={Page.name} onClick={() => {setCurrentPage(Page);handleCloseNavMenu();}}>
+                <MenuItem
+                  key={Page.name}
+                  onClick={() => {
+                    setCurrentPage(Page);
+                    handleCloseNavMenu();
+                  }}
+                >
                   <Typography textAlign="center">{Page.name}</Typography>
                 </MenuItem>
               ))}
@@ -112,7 +118,10 @@ const Header = (props) => {
             {pages.map((Page) => (
               <Button
                 key={Page.name}
-                onClick={() => {setCurrentPage(Page);handleCloseNavMenu();}}
+                onClick={() => {
+                  setCurrentPage(Page);
+                  handleCloseNavMenu();
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {Page.name}
@@ -121,7 +130,7 @@ const Header = (props) => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Avatar alt="Sanjay" src={img} sx={{height:64, width:64}}/>
+            <Avatar alt="Sanjay" src={img} sx={{ height: 64, width: 64 }} />
           </Box>
         </Toolbar>
       </Container>

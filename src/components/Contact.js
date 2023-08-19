@@ -1,21 +1,19 @@
 import * as React from "react";
-import {useState} from 'react'
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import { TextField, Grid, Typography, Button, Modal } from "@mui/material";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'danger',
-  border: '2px solid #000',
+  bgcolor: "danger",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
-
-
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -25,7 +23,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   // modal
   const [open, setOpen] = React.useState(false);
-  const [alert, setAlert]= React.useState("")
+  const [alert, setAlert] = React.useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   //modal
@@ -37,20 +35,20 @@ export default function Contact() {
     const phoneRegex = /^(\+|\d)\d+$/;
 
     if (!name || !email || !phone || !message) {
-      setAlert ("Please fill in all fields");
-      handleOpen()
+      setAlert("Please fill in all fields");
+      handleOpen();
       return;
     }
 
     if (!emailRegex.test(email)) {
       setAlert("Please enter a valid email");
-      handleOpen()
+      handleOpen();
       return;
     }
 
     if (!phoneRegex.test(phone)) {
       setAlert("Please enter a valid phone number");
-      handleOpen()
+      handleOpen();
       return;
     }
 
@@ -67,107 +65,108 @@ export default function Contact() {
   };
   return (
     <>
-    {submitted ? (
-      <Modal
-        open="true"
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Information submitted successfully
-          </Typography>
-        </Box>
-      </Modal>
-      ):
-    (<Box
-      sx={{
-        maxWidth: "100%",
-        border: "2px black solid",
-        borderRadius: "5px",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.7) ",
-      }}
-    >
-      {" "}
-      <Grid
-        container
-        display="flex"
-        flexDirection="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item xs={10}>
-          <Typography variant="h5">Name :</Typography>
-          <TextField
-            fullWidth
-            label="Name"
-            margin="normal"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={10}>
-          <Typography variant="h5">Email :</Typography>
-          <TextField
-            fullWidth
-            label="Email"
-            margin="normal"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={10}>
-          <Typography variant="h5">Phone No :</Typography>
-          <TextField
-            fullWidth
-            label="Phone No"
-            margin="normal"
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </Grid>
-        <Grid item xs={10}>
-          <Typography variant="h5">Message :</Typography>
-          <TextField
-            fullWidth
-            label="Message"
-            margin="normal"
-            multiline
-            minRows="6"
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </Grid>
-      </Grid>
-      <Box sx={{ marginTop: "15px", marginBottom: "10px" }}>
-        <Grid container display="flex" justifyContent="center">
-          <Grid item>
-            <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+      {submitted ? (
+        <Modal
+          open="true"
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Information submitted successfully
+            </Typography>
+          </Box>
+        </Modal>
+      ) : (
+        <Box
+          sx={{
+            maxWidth: "100%",
+            border: "2px black solid",
+            borderRadius: "5px",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.7) ",
+          }}
+        >
+          {" "}
+          <Grid
+            container
+            display="flex"
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item xs={10}>
+              <Typography variant="h5">Name :</Typography>
+              <TextField
+                fullWidth
+                label="Name"
+                margin="normal"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={10}>
+              <Typography variant="h5">Email :</Typography>
+              <TextField
+                fullWidth
+                label="Email"
+                margin="normal"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={10}>
+              <Typography variant="h5">Phone No :</Typography>
+              <TextField
+                fullWidth
+                label="Phone No"
+                margin="normal"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={10}>
+              <Typography variant="h5">Message :</Typography>
+              <TextField
+                fullWidth
+                label="Message"
+                margin="normal"
+                multiline
+                minRows="6"
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </Grid>
           </Grid>
-        </Grid>
-      </Box>
-      <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {alert}
-          </Typography>
+          <Box sx={{ marginTop: "15px", marginBottom: "10px" }}>
+            <Grid container display="flex" justifyContent="center">
+              <Grid item>
+                <Button variant="contained" onClick={handleSubmit}>
+                  Submit
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+          <div>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  {alert}
+                </Typography>
+              </Box>
+            </Modal>
+          </div>
         </Box>
-      </Modal>
-    </div>
-    </Box>
-    )}
-   </>
+      )}
+    </>
   );
-  
 }

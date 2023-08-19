@@ -1,22 +1,21 @@
-import {Card, CardActions, CardContent, CardMedia, Typography, Link} from '@mui/material'
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-
-
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+  Link,
+} from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 
 const Project = ({ project }) => {
-    const { title, desc, github, deployedapp, image } = project;
+  const { title, desc, github, deployedapp, image } = project;
 
-
-    return(
-
-        <Card>
-      <CardMedia
-        sx={{ height: 140 }}
-        image={image}
-        title={title}
-      />
-      <CardContent sx={{height:"250px"}}>
+  return (
+    <Card>
+      <CardMedia sx={{ height: 140 }} image={image} title={title} />
+      <CardContent sx={{ height: "250px" }}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
@@ -25,20 +24,15 @@ const Project = ({ project }) => {
         </Typography>
       </CardContent>
       <CardActions>
-          <Link href={github} target="_blank" rel="noreferrer">
-            <GitHubIcon color="secondary" />
-          </Link>
-          <Link
-            href={deployedapp}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LaptopMacIcon color="success" />
-
-          </Link>
+        <Link href={github} target="_blank" rel="noreferrer">
+          <GitHubIcon color="secondary" />
+        </Link>
+        <Link href={deployedapp} target="_blank" rel="noreferrer">
+          <LaptopMacIcon color="success" />
+        </Link>
       </CardActions>
     </Card>
-    )
-}
+  );
+};
 
-export default Project
+export default Project;

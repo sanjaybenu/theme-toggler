@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from "@mui/material/Unstable_Grid2";
 import Project from "./Project";
 
 const blogging = require("../images/Go-Blogging-Tech.png");
@@ -55,17 +55,15 @@ const Projects = [
 ];
 
 const Portfolio = () => {
-    return (
-      <Grid container spacing={2} direction="row" alignItems="stretch">
-        
-          {Projects.map((project, index) => (
-            <Grid item xs={12}  md={4}>
-            <Project project={project} key={index} />
-            </Grid>
-          ))}
-       
-      </Grid>
-    );
-  };
-  
-  export default Portfolio;
+  return (
+    <Grid container spacing={2} direction="row" alignItems="stretch">
+      {Projects.map((project, index) => (
+        <Grid item xs={12} md={4}>
+          <Project project={project} key={index} />
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+export default Portfolio;
