@@ -77,7 +77,7 @@ export default function Contact() {
         maxWidth: "100%",
         border: "2px black solid",
         borderRadius: "5px",
-        boxShadow: "5px 3px rgba(193, 39, 245, 0.8) ",
+        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.7) ",
       }}
     >
       {" "}
