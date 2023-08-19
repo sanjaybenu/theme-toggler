@@ -34,7 +34,7 @@ export default function Contact() {
 
     // Validate inputs
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\d+$/;
+    const phoneRegex = /^(\+|\d)\d+$/;
 
     if (!name || !email || !phone || !message) {
       setAlert ("Please fill in all fields");
