@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Paper, Box, IconButton, Grid, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import "./App.css";
+
 import Page from "./components/Page";
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import "./App.css";
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -79,7 +80,7 @@ function App() {
       </Header>
 <CssBaseline />
       <Paper 
-        sx={{ minHeight: "100vh", margin: "auto", padding: "50px"}}
+        sx={{ minHeight: "100vh",margin: "auto", padding: "50px"}}
         elevation={8}
         maxWidth="sm"
         square="true"

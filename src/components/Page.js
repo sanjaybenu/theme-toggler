@@ -30,7 +30,7 @@ function Page({ currentPage }) {
 
   return (
     <Box>
-      <Typography variant="h2">{currentPage.name}</Typography>
+      <Typography variant="h4" className="small">{currentPage.name}</Typography>
       <Content>{renderPage()}</Content>
     </Box>
   );

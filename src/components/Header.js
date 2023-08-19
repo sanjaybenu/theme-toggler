@@ -121,7 +121,7 @@ const Header = (props) => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Avatar alt="Sanjay" src={img} />
+            <Avatar alt="Sanjay" src={img} sx={{height:64, width:64}}/>
           </Box>
         </Toolbar>
       </Container>

@@ -1,11 +1,11 @@
 import React from 'react'
-import {Typography} from '@mui/material'
+import {Typography, Grid} from '@mui/material'
 
 const About =()=>{
     return (
-        <div>
-     
-        <Typography variant="h6" paragraph="true" >
+        <Grid container direction="row" alignItems="stretch">
+           <Grid item>
+        <Typography variant="h6" paragraph="true" className="about">
           My name is Sanjay Chopra and I am based in Melbourne, Australia. I am a
           full stack web developer with expertise in HTML, CSS, Javascript,
           Node.js, SQL, NoSQL, React and MERN stack. I have experience in building
@@ -28,7 +28,8 @@ const About =()=>{
           project or any other opportunity, please send me a message through the
           contact page.
         </Typography>
-      </div>
+        </Grid>
+        </Grid>
     )
 }
 

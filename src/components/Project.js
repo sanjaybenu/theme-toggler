@@ -10,13 +10,13 @@ const Project = ({ project }) => {
 
     return(
 
-        <Card >
+        <Card>
       <CardMedia
         sx={{ height: 140 }}
         image={image}
         title={title}
       />
-      <CardContent sx={{height:"200px"}}>
+      <CardContent sx={{height:"250px"}}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
