@@ -22,8 +22,8 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   // modal
-  const [open, setOpen] = React.useState(false);
-  const [alert, setAlert] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [alert, setAlert] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   //modal
@@ -32,7 +32,7 @@ export default function Contact() {
 
     // Validate inputs
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^(\+|\d)\d+$/;
+    const phoneRegex = /^(\+|0)\d+$/;
 
     if (!name || !email || !phone || !message) {
       setAlert("Please fill in all fields");

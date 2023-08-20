@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Typography,
@@ -20,7 +20,7 @@ const Header = (props) => {
   useEffect(() => {
     document.title = currentPage.name;
   }, [currentPage]);
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -90,7 +90,7 @@ const Header = (props) => {
                     handleCloseNavMenu();
                   }}
                 >
-                  <Typography textAlign="center">{Page.name}</Typography>
+                  <Typography textAlign="center" sx={{color:currentPage.name===Page.name?"#b0bec5":"inherit"}}>{Page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -114,15 +114,16 @@ const Header = (props) => {
           >
             My Portfolio
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }}}>
             {pages.map((Page) => (
               <Button
                 key={Page.name}
                 onClick={() => {
                   setCurrentPage(Page);
                   handleCloseNavMenu();
+                  
                 }}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, display: "block", color:currentPage.name===Page.name?"#b0bec5":"inherit"}}
               >
                 {Page.name}
               </Button>

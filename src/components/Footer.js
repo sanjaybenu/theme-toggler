@@ -10,6 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 export default function Footer() {
   return (
@@ -25,6 +26,9 @@ export default function Footer() {
         </Link>
         <Link href="https://www.twitter.com" target="_blank" rel="noreferrer">
           <BottomNavigationAction label="Twitter" icon={<TwitterIcon />} />
+        </Link>
+        <Link href="https://www.facebook.com" target="_blank" rel="noreferrer">
+          <BottomNavigationAction label="facebook" icon={<FacebookIcon />} />
         </Link>
         <Link
           href="https://studio.youtube.com/channel/UCA4mc_H-tqG-aK6kElG2sGQ"

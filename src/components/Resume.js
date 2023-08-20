@@ -40,8 +40,11 @@ const Resume = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          sx={{
+            '&.Mui-expanded .MuiTypography-root': {color:"#b0bec5"}
+          }}
         >
-          <Typography>Technical Skills</Typography>
+          <Typography >Technical Skills</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -60,6 +63,9 @@ const Resume = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
+          sx={{
+            '&.Mui-expanded .MuiTypography-root': {color:"#b0bec5"}
+          }}
         >
           <Typography>Soft Skills</Typography>
         </AccordionSummary>
