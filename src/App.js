@@ -100,7 +100,7 @@ function App() {
       <Paper
         sx={{ minHeight: "100vh", margin: "auto", padding: "50px" }}
         elevation={8}
-        
+        maxWidth="xs"
         square={true}
       >
         <Box>
