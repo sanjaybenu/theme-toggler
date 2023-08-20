@@ -103,6 +103,7 @@ export default function Contact() {
                 margin="normal"
                 type="text"
                 value={name}
+                name= "name"
                 onChange={(e) => setName(e.target.value)}
               />
             </Grid>
@@ -113,6 +114,7 @@ export default function Contact() {
                 label="Email"
                 margin="normal"
                 type="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -124,6 +126,7 @@ export default function Contact() {
                 label="Phone No"
                 margin="normal"
                 type="tel"
+                name="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -138,6 +141,7 @@ export default function Contact() {
                 minRows="6"
                 type="text"
                 value={message}
+                name="message"
                 onChange={(e) => setMessage(e.target.value)}
               />
             </Grid>

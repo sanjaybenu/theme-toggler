@@ -28,19 +28,19 @@ const Home = () => {
           <Typography variant="h3">My Name is Sanjay Chopra</Typography>
           <Typography variant="h4">
             A{" "}
-            <Typography variant="h4" sx={{ color: "darkviolet" }}>
+            <Typography variant="h3" sx={{ color: "darkviolet" }}>
               Full
             </Typography>{" "}
             Stack Web Developer
           </Typography>
-          <Typography variant="h4" paragraph="true">
+          <Typography variant="h4" paragraph={true}>
             an amatuer photographer and drone pilot
           </Typography>
-          <Typography variant="h4" paragraph="true">
+          <Typography variant="h4" paragraph={true}>
             I am proficient in
           </Typography>
         </Fade>
-        <Typography variant="h4" paragraph="true">
+        <Typography variant="h4" paragraph={true}>
           <span>
             <Typist typingDelay={300} loop={true} startDelay={5500}>
               {languages.map((language) => (

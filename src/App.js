@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Paper, Box, IconButton, Grid, CssBaseline } from "@mui/material";
+import { Paper, Box, IconButton, Grid, CssBaseline, Typography} from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Page from "./components/Page";
@@ -75,10 +75,11 @@ function App() {
           justifyContent="flex-end"
         >
           <Grid item>
+            <Typography variant="caption" sx={{fontSize:".5rem"}}>{theme.palette.mode} mode</Typography>
             {theme === darkTheme ? (
               <IconButton
                 aria-label="Dark Mode"
-                disableRipple="true"
+                disableRipple={true}
                 onClick={toggleTheme}
               >
                 <DarkModeIcon sx={{ marginRight: "25px", color: "grey" }} />
@@ -86,7 +87,7 @@ function App() {
             ) : (
               <IconButton
                 aria-label="Light Mode"
-                disableRipple="true"
+                disableRipple={true}
                 onClick={toggleTheme}
               >
                 <LightModeIcon sx={{ marginRight: "25px", color: "white" }} />
@@ -99,11 +100,13 @@ function App() {
       <Paper
         sx={{ minHeight: "100vh", margin: "auto", padding: "50px" }}
         elevation={8}
-        maxWidth="sm"
-        square="true"
+        
+        square={true}
       >
         <Box>
           <Page currentPage={currentPage} />
+        </Box>
+        <Box display="flex" alignItems="center">
         </Box>
       </Paper>
       <Footer />

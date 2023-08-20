@@ -5,7 +5,7 @@ const About = () => {
   return (
     <Grid container direction="row" alignItems="stretch">
       <Grid item>
-        <Typography variant="h6" paragraph="true" className="about">
+        <Typography variant="h6" paragraph={true} className="about">
           My name is Sanjay Chopra and I am based in Melbourne, Australia. I am
           a full stack web developer with expertise in HTML, CSS, Javascript,
           Node.js, SQL, NoSQL, React and MERN stack. I have experience in
