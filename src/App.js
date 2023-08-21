@@ -82,7 +82,7 @@ function App() {
                 disableRipple={true}
                 onClick={toggleTheme}
               >
-                <DarkModeIcon sx={{ marginRight: "25px", color: "grey" }} />
+                <LightModeIcon sx={{ marginRight: "25px", color: "grey", fontSize:"1rem" }} />
               </IconButton>
             ) : (
               <IconButton
@@ -90,7 +90,7 @@ function App() {
                 disableRipple={true}
                 onClick={toggleTheme}
               >
-                <LightModeIcon sx={{ marginRight: "25px", color: "white" }} />
+                <DarkModeIcon sx={{ marginRight: "25px", color: "white", fontSize:"1rem"}} />
               </IconButton>
             )}
           </Grid>
